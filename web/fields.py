@@ -4,11 +4,10 @@ from widgets import * #http://wtforms.readthedocs.org/en/latest/fields.html
 
 class Form(flask_wtf.Form):
     name = TextAreaField('Name', col_md = 12)
-    teacher = TextAreaField('Teacher', col_md = 12)
+    language = TextAreaField('Language', col_md = 12)
     #Auton Section
-    auton_balls = IntegerField('Auton balls possessed', default=0)
-    auton_high = RadioField("Auton High Goal", choices=[('0','N/A'),('1','Missed'),('2','Scored')],default=0)
-    auton_low = RadioField("Auton Low Goal", choices=[('0','N/A'),('1','Missed'),('2','Scored')],default=0)
+    preferences = RadioField("How much do you like your language?", choices=[('0','Love it'),('1','Meh'),('2','Could be a lot better'),('3','The devil has written a language')],default=0)
+    auton_low = RadioField("\(*_*)/", choices=[('0','N/A'),('1','Missed'),('2','Scored')],default=0)
     #Teleop Section
     high = IntegerField('Teleop High Goals:',default=0)
     high_miss = IntegerField('High Goals Missed:',default=0)

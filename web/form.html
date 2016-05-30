@@ -2,14 +2,14 @@
 {% block body %}
 <div class="row">
 	<div class='col-md-8'>
-		<h2>What should this be</h2>
+		<h2>What language is best?</h2>
 	</div>
 </div>
 <form method="post" id="scouting-form" autocomplete="off">
   {{ form.csrf_token }}
   <div class="row form-group">
-		{{ form.match_id }}
-		{{ form.team_id }}
+		{{ form.name }}
+		{{ form.language }}
   </div>
   <div class="row">  
     <div class="col-md-6">
@@ -24,12 +24,9 @@
     </div>
   </div>
   <div class="game-period">
-  	<h3>Autonomous</h3>
-  	<div class="row">
-  		{{ form.auton_balls }}
-
-  		<div class='col-md-3'>
-  			{{ form.auton_high.label }} {{ form.auton_high }}
+  	<h3>Language</h3>
+      <div class='col-md-3'>
+  			{{ form.preferences.label }} {{ form.preferences }}
   		</div>
   		<div class='col-md-3'>
   			{{ form.auton_low.label }} {{ form.auton_low }}
