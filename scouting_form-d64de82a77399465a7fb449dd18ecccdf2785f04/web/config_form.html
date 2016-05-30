@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body %}
+{% if success %}
+    <div class="alert alert-success">Saved!</div>
+{% endif %}
+<form method="post">
+    {{ form.csrf_token }}
+    {{ form.computer_name.label }} {{ form.computer_name }}
+    <br>
+    {{ form.export_id.label }} {{ form.export_id }}
+    <br>
+    {{ form.station.label }} {{ form.station }}
+    <br>
+    {{ form.event_name.label }} {{ form.event_name }}
+    <br>
+    <input type="submit" class="btn btn-primary" value="Save">
+</form>
+{% endblock %}

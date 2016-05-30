@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+<script src="/static/export.js"></script>
+<h2>Export scouting data</h2>
+<p id="stats"><span></span>&nbsp;<a class="btn btn-info btn-xs" href="{{url_for('config_form', return_to=request.path)}}">Change</a></p>
+<div class="row form-group" id="path-row">
+  <div class="col-sm-1">
+    <label for="path">Path</label>
+  </div>
+  <div class="col-sm-4">
+    <input class="form-control col-sm-5" id="path" type="text" value="{{default_path}}"/>
+  </div>
+  <div class="col-sm-1">
+    <a class="btn btn-default" id="check-path">Ok</a>
+  </div>
+</div>
+<div class="row">
+  {% macro stage(id, alert_class, message, button=None, hidden=True) %}
+    <div class="stage" id="stage-{{id}}" {%if hidden%} style="display: none;"{%endif%}>
+      <div class="col-sm-6">
+        <div class="alert alert-{{alert_class}}">
+          {{message}} <span id="details"></span>
+        </div>
+      </div>
+      {% if button %}
+      <div class="col-sm-1">
+        <a class="btn btn-{{button[2] or 'default'}}" href="#stage-{{button[0]}}">{{button[1]}}</a>
+      </div>
+      {% endif %}
+    </div>
+  {% endmacro %}
+  {{ stage('nothing', 'info', 'Select a destination folder', hidden=False) }}
+  {{ stage('confirm', 'success', 'Able to export to', ('export', 'Export!', 'success')) }}
+  {{ stage('success', 'success', 'Export complete') }}
+  {{ stage('bad-path', 'danger', "Can't export to", ('nothing', 'Back')) }}
+  {{ stage('failed', 'danger', 'Export failed', ('nothing', 'Back')) }}
+</div>
+{% endblock %}

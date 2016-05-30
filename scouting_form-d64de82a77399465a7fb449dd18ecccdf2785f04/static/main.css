@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(47,47,123);
+}
+
+div.content {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin: 5em 2em 2em;
+    padding: 1em;
+}
+
+label {
+    text-align: left;
+}
+
+.has-error input[type=text],
+.has-error input[type=number]
+{
+    background-color: #fdd;
+}
+
+.has-error .btn
+{
+    border-color: rgb(169, 68, 66);
+}
+
+.com-field {
+    width: 22em;
+    height: 14em;
+}
+
+#submit {
+    background: rgb(255,203,6);
+    border: 1px solid rgb(47,47,123);
+    color: rgb(47,47,123);
+    font-size: 16px;
+}
+
+.checkbox-button-field label.btn {
+    width: 100%;
+    padding-left: 1em;
+}
+
+.game-period{
+    border-top: 1px solid #bbb;
+}
+#logo{
+    max-width: 50%;
+}
+textarea{
+    width:100%;
+}
+/* For use mainly with radio fields */
+.horiz-align li, .horiz-align ul{
+    display: inline-block;
+    padding-right: 2em;
+}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block body %}
+<script src="/static/schedule_loader.js"></script>
+<h2>Load Event Schedule</h2>
+<p>Go to <a href='http://frc-events.usfirst.org/' target='_blank'>http://frc-events.usfirst.org/</a> to find a qualification match schedule</p>
+<a class="btn btn-default" id="select-file">Select File From System</a>
+<div class='row'>
+	<div class='col-md-2'>
+		<label for='source'>Schedule Source</label>
+	</div>
+	<div class='col-md-8'>
+		<input type='text' placeholder='URL' id='source' class='form-control'/>
+	</div>
+</div>
+<div class='row'>
+	<div class='col-md-2'>
+		<label for='filename'>Event Name</label>
+	</div>
+	<div class='col-md-8'>
+		<input type='text' placeholder='Name' id='filename' class='form-control'/>
+	</div>
+</div>
+<a class="btn btn-default" id="fetch">Fetch!</a>
+</br>
+<div id='result' class="alert hidden" style='width:50%'>
+</div>
+{% endblock %}
