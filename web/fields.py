@@ -3,8 +3,8 @@ import flask_wtf
 from widgets import * #http://wtforms.readthedocs.org/en/latest/fields.html
 
 class Form(flask_wtf.Form):
-    match_id = StringField('Name', buttons=False)
-    team_id = IntegerField('Team #', buttons=False)
+    name = TextAreaField('Name', col_md = 12)
+    teacher = TextAreaField('Teacher', col_md = 12)
     #Auton Section
     auton_balls = IntegerField('Auton balls possessed', default=0)
     auton_high = RadioField("Auton High Goal", choices=[('0','N/A'),('1','Missed'),('2','Scored')],default=0)
