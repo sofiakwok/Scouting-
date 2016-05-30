@@ -19,7 +19,7 @@
       {% if conf.get('station', 'none').lower() == 'none' %}
         <div id="alert" class="alert alert-warning">No player station selected; team ID completion is not available.
         See {{link_to('config_form', 'Settings')}} to choose a station.</div>
-      {% else %}
+      {% else %} 
         <div><label>Player Station: {{conf.get('station', '?')}}</label></div>
         <div><label>Event: {{conf.get('event_name', '?')}}</label></div>
         <div id="alert" class="alert" style="display: none;"></div>
