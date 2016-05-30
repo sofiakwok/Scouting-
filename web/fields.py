@@ -3,7 +3,7 @@ import flask_wtf
 from widgets import * #http://wtforms.readthedocs.org/en/latest/fields.html
 
 class Form(flask_wtf.Form):
-    match_id = IntegerField('Match #', buttons=False)
+    match_id = StringField('Name', buttons=False)
     team_id = IntegerField('Team #', buttons=False)
     #Auton Section
     auton_balls = IntegerField('Auton balls possessed', default=0)
