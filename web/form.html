@@ -2,14 +2,14 @@
 {% block body %}
 <div class="row">
 	<div class='col-md-8'>
-		<h2>What language is best?</h2>
+		<h2>Rate a robotics member</h2>
 	</div>
 </div>
 <form method="post" id="scouting-form" autocomplete="off">
   {{ form.csrf_token }}
   <div class="row form-group">
 		{{ form.name }}
-		{{ form.language }}
+		{{ form.person }}
   </div>
   <div class="row">  
     <div class="col-md-6">
@@ -24,48 +24,50 @@
     </div>
   </div>
   <div class="game-period">
-  	<h3>Language</h3>
+  	<h3>Rate them!</h3>
       <div class='col-md-3'>
   			{{ form.preferences.label }} {{ form.preferences }}
   		</div>
   		<div class='col-md-3'>
-  			{{ form.auton_low.label }} {{ form.auton_low }}
+  			{{ form.rating }}
   		</div>  		
   	</div>
   </div>
   <div class='game-period'>
-  	<h3>Teleop</h3>
+  	<h3>More Questions</h3>
   	<div class='row'>
-  		{{ form.high }}
-  		{{ form.high_miss }}
-  		{{ form.low }}
+  		{{ form.time }}
   	</div>
   	<div class='row'>
   		<div class='col-md-12 horiz-align'>
-  			{{ form.low_speed.label }} {{ form.low_speed }}
+  			{{ form.subteam.label }} {{ form.subteam }}
   		</div>
   	</div>
   </br>
   	<div class='row'>
   		<div class='col-md-12 horiz-align'>
-  			{{ form.pass_truss.label }} {{ form.pass_truss }}
+  			{{ form.proficiency.label }} {{ form.proficiency }}
   		</div>
   	</div>
   	<div class='row'>
   		<div class='col-md-12 horiz-align'>
-  			{{ form.pass_ranged.label }} {{ form.pass_ranged }}
+  			{{ form.communication.label }} {{ form.communication }}
   		</div>
   	</div>
   </br>  	
   	<div class='row'>
-  		{{ form.fouls }}
-  		{{ form.tfouls }}
+  		{{ form.years }}
   	</div>
+    <div class = 'row'>
+      {{ form.safety.label }} &nbsp {{form.safety}}
+    </div>
+
   	<div class='row'>
   		<div class='col-md-8 horiz-align'>
   			{{ form.defense.label }} {{ form.defense }}
   		</div>
   	</div>
+    
   	<div class='row'>
   		<div class='col-md-2'>
   			<p>Catching:</p>
